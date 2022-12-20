@@ -73,15 +73,7 @@ This will
 
 A typical output from the the test looks like this:
 
-Model directory: /home/david/models/20180402-114759/
-Metagraph file: model-20180402-114759.meta
-Checkpoint file: model-20180402-114759.ckpt-275
-Runnning forward pass on LFW images
-........................
-Accuracy: 0.99650+-0.00252
-Validation rate: 0.98367+-0.00948 @ FAR=0.00100
-Area Under Curve (AUC): 1.000
-Equal Error Rate (EER): 0.004
+![image](https://user-images.githubusercontent.com/114071791/208711987-6d263ebe-1787-471d-86d3-422e04af8215.png)
 
 
 ## Limitations:
