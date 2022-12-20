@@ -1,6 +1,7 @@
 # Model Card：facenet
 ## Model Introduction
 FaceNet: A Unified Embedding for Face Recognition and Clustering
+
 facenet first detects the key points of the face in the input image. After the face is detected, the key points of the face are aligned (transformed), and then the face is cropped out and input into the neural network. Finally, the embedded features of the face (hyperspherical Euclidean space) are output, which can be used for clustering, similarity detection and classification.
 
 ![image](https://user-images.githubusercontent.com/114071791/208710656-f567d955-4108-4c8e-8852-7d89a9028f4f.png)
