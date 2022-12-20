@@ -15,6 +15,8 @@ The model directly learns a mapping from face images to a compact Euclidean spac
 
 ### Facenet Network structure
 
+![image](https://user-images.githubusercontent.com/114071791/208711407-bd12d9ac-95f3-4b4d-9cab-a577abf2bcbb.png)
+
 NN1/NN2/NN3/NN4/NNS1/NNS2（Different convolutional neural networks）->L2 normalization->Embedding->The Triplet Loss and the gradient of each parameter are calculated, and the weights are updated
 
 
