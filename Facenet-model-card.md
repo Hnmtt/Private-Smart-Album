@@ -30,6 +30,7 @@ NNS2 (tiny Inception 140×116)   51.9% ± 2.9
 ### Embedding
 
 The Embedding layer can be understood as a mapping relationship, that is, the feature is mapped from the original feature space to a new feature space, and the new feature can be called an embedding of the original feature.The main purpose of Embedding is to reduce the dimensionality of sparse features.
+
 In the following example, the first matrix on the left is the one_hot coded 2x6 matrix, which is entered into the fully connected layer with three nodes to obtain the reduced dimensional output matrix on the right. The original 6-dimensional one_hot coding vector is reduced to 3-dimensional vector through the Embedding layer.
 
 ![image](https://user-images.githubusercontent.com/114071791/208705890-2330e68a-97d4-4d4c-975d-e1cc098a6476.png)
@@ -37,7 +38,10 @@ In the following example, the first matrix on the left is the one_hot coded 2x6 
 ### Triplet Loss
 
 In order to solve the defect of directly using Euclidean distance as loss function, facenet uses triplet loss function.
-Three face images were extracted from the training data each time. The first image was labeled xai (fixed picture a), the second image was labeled xpi (positive sample picture b) and the third image was labeled xni (negative sample picture n). a and b correspond to an image of the same person, while n is an image of another person's face. Picture a and picture p are a positive sample pair, picture A and picture n are a negative sample pair. We choose a sample that is least like the Positive sample from the positive sample (b), and a sample that is most like the positive sample from the Negative sample (n) (that is, samples with different faces that are closest to the fixed picture A are most likely to be confused), and then the calculated loss distance is the maximum distance. It is enough to optimize such loss function. When the values calculated in this way can meet the requirements, other samples can also meet the requirements.
+
+Three face images were extracted from the training data each time. The first image was labeled xai (fixed picture a), the second image was labeled xpi (positive sample picture b) and the third image was labeled xni (negative sample picture n). a and b correspond to an image of the same person, while n is an image of another person's face. Picture a and picture p are a positive sample pair, picture A and picture n are a negative sample pair.
+
+We choose a sample that is least like the Positive sample from the positive sample (b), and a sample that is most like the positive sample from the Negative sample (n) (that is, samples with different faces that are closest to the fixed picture A are most likely to be confused), and then the calculated loss distance is the maximum distance. It is enough to optimize such loss function. When the values calculated in this way can meet the requirements, other samples can also meet the requirements.
 
 ![image](https://user-images.githubusercontent.com/114071791/208702632-b747c6c0-578a-4e42-92e5-72358ce83e6f.png)
 
@@ -85,6 +89,7 @@ Equal Error Rate (EER): 0.004
 ## Limitations:
 
 1.The triplet loss training face model usually requires a very large face data set to achieve good results. In addition, the convergence rate of the model is also slow.
+
 2.facenet was developed earlier, so some libraries have stricter requirements (tensorflow=1.7.0, scipy=1.2.1). These libraries may not be compatible with advanced python environments, and it is important to note when creating environments.
 
 ## More information
