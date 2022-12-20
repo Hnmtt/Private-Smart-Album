@@ -1,13 +1,15 @@
 # Model Card：facenet
 ## Model Introduction
 FaceNet: A Unified Embedding for Face Recognition and Clustering
+facenet first detects the key points of the face in the input image. After the face is detected, the key points of the face are aligned (transformed), and then the face is cropped out and input into the neural network. Finally, the embedded features of the face (hyperspherical Euclidean space) are output, which can be used for clustering, similarity detection and classification.
+
+![image](https://user-images.githubusercontent.com/114071791/208710656-f567d955-4108-4c8e-8852-7d89a9028f4f.png)
 
 ## Model principle
 
 All the facenet models are trained using a loss called triplet loss. This loss ensures that the model gives closer embeddings for same people and farther embeddings for different people.
 The models are trained on a huge amount of images out of which triplets are generated.
 
-![image](https://user-images.githubusercontent.com/114071791/208702632-b747c6c0-578a-4e42-92e5-72358ce83e6f.png)
 
 The model directly learns a mapping from face images to a compact Euclidean space where distances directly correspond to a measure of face similarity. Facenet uses the deep convolutional network to convert the input face image into a vector, and then calculates the Euclidean distance between the two vectors with the vectors of each face in the data set. For the face image of the same person, the Euclidean distance between the corresponding two vectors should be relatively small, and vice versa.
 
@@ -36,6 +38,8 @@ In the following example, the first matrix on the left is the one_hot coded 2x6 
 
 In order to solve the defect of directly using Euclidean distance as loss function, facenet uses triplet loss function.
 Three face images were extracted from the training data each time. The first image was labeled xai (fixed picture a), the second image was labeled xpi (positive sample picture b) and the third image was labeled xni (negative sample picture n). a and b correspond to an image of the same person, while n is an image of another person's face. Picture a and picture p are a positive sample pair, picture A and picture n are a negative sample pair. We choose a sample that is least like the Positive sample from the positive sample (b), and a sample that is most like the positive sample from the Negative sample (n) (that is, samples with different faces that are closest to the fixed picture A are most likely to be confused), and then the calculated loss distance is the maximum distance. It is enough to optimize such loss function. When the values calculated in this way can meet the requirements, other samples can also meet the requirements.
+
+![image](https://user-images.githubusercontent.com/114071791/208702632-b747c6c0-578a-4e42-92e5-72358ce83e6f.png)
 
 
 ## Model Usege
