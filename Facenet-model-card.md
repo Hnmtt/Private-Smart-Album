@@ -20,12 +20,8 @@ NN1/NN2/NN3/NN4/NNS1/NNS2（Different convolutional neural networks）->L2 norma
 
 ### Full name of each neural network and final accuracy on verification set when using this network as facenet's convolutional neural network:
 
-NN1 (Zeiler&Fergus 220×220)     87.9% ± 1.9
-NN2 (Inception 224×224)         89.4% ± 1.6
-NN3 (Inception 160×160)         88.3% ± 1.7
-NN4 (Inception 96×96)           82.0% ± 2.3
-NNS1 (mini Inception 165×165)   82.4% ± 2.4
-NNS2 (tiny Inception 140×116)   51.9% ± 2.9
+![image](https://user-images.githubusercontent.com/114071791/208711076-7d77d815-0227-48c1-a4e0-37c891daff87.png)
+
 
 ### Embedding
 
