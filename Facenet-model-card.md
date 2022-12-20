@@ -66,10 +66,10 @@ python src/validate_on_lfw.py \
 --use_fixed_image_standardization
 
 This will
-a) load the model,
-b) load and parse the text file with the image pairs,
-c) calculate the embeddings for all the images (as well as their horizontally flipped versions) in the test set,
-d) calculate the accuracy, validation rate (@FAR=-10e-3), the Area Under Curve (AUC) and the Equal Error Rate (EER) performance measures.
+* a) load the model,
+* b) load and parse the text file with the image pairs,
+* c) calculate the embeddings for all the images (as well as their horizontally flipped versions) in the test set,
+* d) calculate the accuracy, validation rate (@FAR=-10e-3), the Area Under Curve (AUC) and the Equal Error Rate (EER) performance measures.
 
 A typical output from the the test looks like this:
 
